@@ -1,0 +1,35 @@
+Source: prettytable
+Section: python
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders: Sandro Tosi <morph@debian.org>
+Build-Depends: debhelper (>= 7.0.50~), python-all (>= 2.6.6-3~), python3-all (>= 3.1.3-3), python-setuptools, python3-setuptools
+Standards-Version: 3.9.3
+Homepage: http://code.google.com/p/prettytable/
+Vcs-Svn: svn://svn.debian.org/python-modules/packages/prettytable/trunk/
+Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/prettytable/trunk/
+
+Package: python-prettytable
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: library to represent tabular data in visually appealing ASCII tables
+ PrettyTable is a simple Python library designed to make it quick and
+ easy to represent tabular data in visually appealing ASCII tables. It
+ was inspired by the ASCII tables used in the PostgreSQL shell
+ psql. PrettyTable allows for selection of which columns are to be
+ printed, independent alignment of columns (left or right justified or
+ centred) and printing of "sub-tables" by specifying a row range.
+
+Package: python3-prettytable
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: library to represent tabular data in visually appealing ASCII tables (Python3)
+ PrettyTable is a simple Python library designed to make it quick and
+ easy to represent tabular data in visually appealing ASCII tables. It
+ was inspired by the ASCII tables used in the PostgreSQL shell
+ psql. PrettyTable allows for selection of which columns are to be
+ printed, independent alignment of columns (left or right justified or
+ centred) and printing of "sub-tables" by specifying a row range.
+ .
+ This package contains the Python 3 version of prettytable.

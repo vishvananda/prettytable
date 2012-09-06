@@ -1,0 +1,39 @@
+prettytable (0.6-1ubuntu1) quantal; urgency=low
+
+  * Convert to dh_python2:
+    - debian/control: Removed python-support from Build-Depends-Indep.
+    - debian/rules: Added --with python2 to complete transition. 
+
+ -- Dave Walker (Daviey) <DaveWalker@ubuntu.com>  Sun, 20 May 2012 10:42:04 +0100
+
+prettytable (0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/rules
+    - remove python3 transformation commands, available upstream now
+    - run tests at build time
+  * debian/copyright
+    - reorganize information
+  * Ship unittest in debian/, no longer available in upstream tarball
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 06 May 2012 11:06:13 +0200
+
+prettytable (0.5-2) unstable; urgency=low
+
+  * debian/control
+    - bump Standards-Version to 3.9.3 (no changes needed)
+  * Provide python3 package; thanks to James Page for initial patch;
+    Closes: #638303
+  * debian/source/format
+    - use 3.0 (quilt) source format
+  * debian/copyright
+    - move to DEP5 format
+    - extend packaging copyright years
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 01 May 2012 15:55:55 +0200
+
+prettytable (0.5-1) unstable; urgency=low
+
+  * Initial release (Closes: #530704)
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 27 May 2009 09:14:57 +0200
