@@ -3,10 +3,9 @@
 #export DH_VERBOSE=1
 
 PY2VERS := $(shell pyversions -s)
-PY3VERS := $(shell py3versions -s)
 
 %:
-	dh $@ --with python2,python3
+	dh $@ --with python2
 
 override_dh_auto_install:
 	set -e ; \
@@ -15,28 +14,17 @@ override_dh_auto_install:
 			--root $(CURDIR)/debian/python-prettytable; \
 	done
 
-	set -e ; \
-	for python in $(PY3VERS); do \
-		$$python setup.py install --no-compile -O0 --install-layout=deb \
-			--root $(CURDIR)/debian/python3-prettytable; \
-	done
-
 override_dh_auto_clean:
 	set -e ; \
 	for python in $(PY2VERS); do \
 	    $$python setup.py clean -a; \
 	done
 	set -e ; \
-	for python in $(PY3VERS); do \
-	    $$python setup.py clean -a; \
-	done
-	find . -name \*.pyc -exec rm {} \;
-	dh_clean
 
 override_dh_auto_test:
 ifeq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
 	set -e ; \
-	for python in $(PY2VERS) $(PY3VERS); do \
+	for python in $(PY2VERS); do \
 		PYTHONPATH=. $$python debian/prettytable_test.py ; \
 	done
 endif
